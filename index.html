@@ -131,30 +131,34 @@
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 200;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.9rem 3rem;
       background: rgba(28, 10, 14, 0.96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(201, 149, 58, 0.25);
       transition: padding 0.3s ease;
+      padding: 0;
     }
-    nav.scrolled { padding: 0.65rem 3rem; }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.9rem 0;
+      transition: padding 0.3s ease;
+    }
+    nav.scrolled .nav-inner { padding: 0.55rem 0; }
 
     .nav-logo {
-      display: flex; align-items: center; gap: 0.65rem;
+      display: flex; align-items: center; gap: 0.75rem;
       text-decoration: none; flex-shrink: 0;
     }
     .nav-logo-mark {
-      width: 38px; height: 38px; flex-shrink: 0;
+      width: 46px; height: 46px; flex-shrink: 0;
     }
     .nav-logo-mark img { width: 100%; height: 100%; object-fit: contain; }
     .nav-logo-text {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1rem; font-weight: 700;
+      font-size: 1.15rem; font-weight: 700;
       color: var(--cream); letter-spacing: 0.01em; line-height: 1.2;
     }
     .nav-logo-text span {
-      display: block; font-size: 0.52rem; font-weight: 300;
+      display: block; font-size: 0.58rem; font-weight: 300;
       color: var(--gold-lt); letter-spacing: 0.1em; text-transform: uppercase;
       white-space: nowrap;
     }
@@ -859,8 +863,8 @@
       .nav-hamburger { display: flex; }
     }
     @media (max-width: 768px) {
-      nav { padding: 0.9rem 1.5rem; }
-      nav.scrolled { padding: 0.65rem 1.5rem; }
+      .nav-logo-mark { width: 36px; height: 36px; }
+      .nav-logo-text { font-size: 0.95rem; }
       section { padding: 4.5rem 0; }
       .container { padding-left: 1.5rem; padding-right: 1.5rem; }
       .contact-info { padding: 4.5rem 1.5rem; }
@@ -873,23 +877,25 @@
 
 <!-- NAVIGATION -->
 <nav id="navbar">
-  <a href="#" class="nav-logo" title="Renaissance Language Campus — Home">
-    <div class="nav-logo-mark"><img src="logo.png" alt="Renaissance Language Campus Logo" /></div>
-    <div class="nav-logo-text">
-      Renaissance
-      <span>Language Campus & Translation Services</span>
-    </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#about"      title="About Renaissance Language Campus">About</a></li>
-    <li><a href="#curriculum" title="View our English Explorer curriculum">Curriculum</a></li>
-    <li><a href="#classes"    title="Browse English class schedules">Classes</a></li>
-    <li><a href="#contact"    title="Contact Renaissance Language Campus">Contact</a></li>
-    <li><a href="#contact" class="nav-cta" title="Enroll in an English class">Enroll Now</a></li>
-  </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-inner container">
+    <a href="#" class="nav-logo" title="Renaissance Language Campus — Home">
+      <div class="nav-logo-mark"><img src="logo.png" alt="Renaissance Language Campus Logo" /></div>
+      <div class="nav-logo-text">
+        Renaissance
+        <span>Language Campus & Translation Services</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about"      title="About Renaissance Language Campus">About</a></li>
+      <li><a href="#curriculum" title="View our English Explorer curriculum">Curriculum</a></li>
+      <li><a href="#classes"    title="Browse English class schedules">Classes</a></li>
+      <li><a href="#contact"    title="Contact Renaissance Language Campus">Contact</a></li>
+      <li><a href="#contact" class="nav-cta" title="Enroll in an English class">Enroll Now</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <!-- MOBILE DRAWER -->
