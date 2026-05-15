@@ -100,6 +100,15 @@
 
     html { scroll-behavior: smooth; }
 
+    .container {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 4rem;
+      padding-right: 4rem;
+      width: 100%;
+    }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background: var(--cream);
@@ -361,7 +370,7 @@
     .hero-scroll svg { opacity: 0.4; }
 
     /* ── SECTION COMMON ─────────────────────────────────── */
-    section { padding: 7rem 4rem; }
+    section { padding: 7rem 0; }
 
     .section-eyebrow {
       font-size: 0.7rem; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase;
@@ -394,6 +403,8 @@
     /* ── ABOUT ──────────────────────────────────────────── */
     #about {
       background: #F0E8D0;
+    }
+    .about-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
       align-items: center;
     }
@@ -443,7 +454,7 @@
       overflow: hidden;
     }
     #curriculum .inner {
-      padding: 0 4rem;
+      /* padding handled by .container */
     }
     .curriculum-header {
       display: flex; align-items: flex-end; justify-content: space-between;
@@ -580,7 +591,7 @@
 
     .slider-dots {
       display: flex; justify-content: center; gap: 0.5rem;
-      margin-top: 2rem; padding: 0 4rem;
+      margin-top: 2rem;
     }
     .dot {
       width: 6px; height: 6px; border-radius: 50%;
@@ -787,9 +798,11 @@
     /* ── FOOTER ─────────────────────────────────────────── */
     footer {
       background: #0E0508;
-      padding: 2rem 4rem;
-      display: flex; align-items: center; justify-content: space-between;
       border-top: 1px solid rgba(201,149,58,0.1);
+    }
+    .footer-content {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 2rem; padding-bottom: 2rem;
     }
     footer p {
       font-size: 0.75rem; color: rgba(253,248,241,0.3);
@@ -832,10 +845,11 @@
     }
     @media (max-width: 1366px) {
       .hero-content { max-width: 720px; }
-      section { padding: 5.5rem 3rem; }
+      section { padding: 5.5rem 0; }
+      .container { padding-left: 3rem; padding-right: 3rem; }
     }
     @media (max-width: 1024px) {
-      #about { grid-template-columns: 1fr; gap: 3rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       #contact { grid-template-columns: 1fr; }
       .contact-map { min-height: 350px; }
       .map-overlay { background: linear-gradient(to bottom, var(--dark) 0%, transparent 20%); }
@@ -847,12 +861,10 @@
     @media (max-width: 768px) {
       nav { padding: 0.9rem 1.5rem; }
       nav.scrolled { padding: 0.65rem 1.5rem; }
-      section { padding: 4.5rem 1.5rem; }
-      #curriculum .inner { padding: 0 1.5rem; }
-      .slider-track-wrap { padding: 0 1.5rem; }
-      .slider-dots { padding: 0 1.5rem; }
+      section { padding: 4.5rem 0; }
+      .container { padding-left: 1.5rem; padding-right: 1.5rem; }
       .contact-info { padding: 4.5rem 1.5rem; }
-      footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 1.5rem; }
+      .footer-content { flex-direction: column; gap: 0.75rem; text-align: center; }
       .curriculum-header { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
     }
   </style>
@@ -931,6 +943,7 @@
 
 <!-- ABOUT -->
 <section id="about">
+<div class="container about-grid">
   <div class="about-visual reveal">
     <div class="about-stats-grid">
       <div class="about-stat">
@@ -972,11 +985,12 @@
       </a>
     </div>
   </div>
+</div>
 </section>
 
 <!-- CURRICULUM SLIDER -->
 <section id="curriculum">
-  <div class="inner">
+  <div class="inner container">
     <div class="curriculum-header">
       <div>
         <p class="section-eyebrow reveal">Our Textbooks</p>
@@ -997,7 +1011,8 @@
     </div>
   </div>
 
-  <div style="padding:0 4rem;" class="slider-track-wrap" id="sliderWrap">
+  <div class="container" style="padding-left:0;padding-right:0;">
+  <div class="slider-track-wrap" id="sliderWrap" style="padding:0 4rem;">
     <div class="slider-track" id="sliderTrack">
 
       <!-- Book 1 -->
@@ -1107,6 +1122,7 @@
 
     </div>
   </div>
+  </div>
 
   <div class="slider-dots" id="sliderDots">
     <div class="dot active" data-idx="0"></div>
@@ -1119,6 +1135,7 @@
 
 <!-- CLASSES -->
 <section id="classes">
+<div class="container">
   <p class="section-eyebrow reveal">What We Offer</p>
   <h2 class="section-title reveal reveal-delay-1">Regular <em>Class</em> Programs</h2>
   <p class="section-lead reveal reveal-delay-2">
@@ -1256,6 +1273,7 @@
     </table>
     </div>
   </div>
+</div>
 </section>
 
 <!-- CONTACT -->
@@ -1341,6 +1359,7 @@
 
 <!-- FOOTER -->
 <footer>
+<div class="container footer-content">
   <div class="footer-logo">Renaissance Language Campus</div>
   <p>&copy; 2025 Renaissance Language Campus & Translation Services. All rights reserved.</p>
   <a href="https://www.facebook.com/RenaissanceELTA" target="_blank" rel="noopener noreferrer"
@@ -1348,6 +1367,7 @@
      onmouseover="this.style.color='var(--gold-lt)'" onmouseout="this.style.color='rgba(253,248,241,0.35)'">
     facebook.com/RenaissanceELTA
   </a>
+</div>
 </footer>
 
 <script>
