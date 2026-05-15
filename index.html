@@ -182,11 +182,15 @@
     .nav-links a:hover::after { transform: scaleX(1); }
 
     .nav-cta {
+      display: inline-flex; align-items: center;
       background: var(--crimson) !important;
       color: var(--cream) !important;
-      padding: 0.45rem 1rem !important;
+      padding: 0 1rem !important;
+      height: 2rem;
+      border: 1px solid transparent !important;
       border-radius: 2px;
       font-size: 0.75rem !important;
+      line-height: 1 !important;
       white-space: nowrap;
       transition: background 0.2s !important;
     }
@@ -194,13 +198,15 @@
     .nav-cta::after { display: none !important; }
 
     .nav-call {
-      display: flex; align-items: center; gap: 0.4rem;
+      display: inline-flex; align-items: center; gap: 0.4rem;
       text-decoration: none;
       color: var(--gold-lt) !important;
       border: 1px solid rgba(201,149,58,0.45);
-      padding: 0.45rem 0.9rem;
+      padding: 0 0.9rem;
+      height: 2rem;
       border-radius: 2px;
       font-size: 0.75rem; font-weight: 500;
+      line-height: 1;
       letter-spacing: 0.04em; white-space: nowrap;
       transition: border-color 0.2s, color 0.2s, background 0.2s;
     }
@@ -213,6 +219,13 @@
     .nav-call svg { flex-shrink: 0; }
 
     /* Hamburger */
+    .nav-mobile-actions {
+      display: none;
+      align-items: center; gap: 0.5rem;
+    }
+    .nav-call-mobile {
+      padding: 0.45rem 0.6rem !important;
+    }
     .nav-hamburger {
       display: none;
       flex-direction: column; gap: 5px;
@@ -877,7 +890,8 @@
     }
     @media (max-width: 860px) {
       .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
+      .nav-mobile-actions { display: flex; }
+      .nav-mobile-actions .nav-hamburger { display: flex; }
     }
     @media (max-width: 768px) {
       .nav-logo-mark { width: 36px; height: 36px; }
@@ -913,9 +927,14 @@
       </a></li>
       <li><a href="#contact" class="nav-cta" title="Enroll in an English class">Enroll Now</a></li>
     </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-mobile-actions">
+      <a href="tel:+959448041603" class="nav-call nav-call-mobile" title="Call Renaissance Language Campus">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.47 2 2 0 0 1 3.55 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6 6l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+      </a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
