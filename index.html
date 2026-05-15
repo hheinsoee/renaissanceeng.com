@@ -252,10 +252,10 @@
 
     .hero-title {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
       font-weight: 800;
       color: var(--cream);
-      line-height: 1.08;
+      line-height: 1.1;
       letter-spacing: -0.03em;
       margin-bottom: 0.2rem;
     }
@@ -273,33 +273,33 @@
 
     .hero-subtitle {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      font-size: clamp(0.85rem, 1.4vw, 1rem);
       font-style: normal;
       color: rgba(253,248,241,0.55);
-      margin: 1.5rem 0 2.5rem;
+      margin: 1rem 0 2rem;
       font-weight: 300;
       letter-spacing: 0.04em;
     }
 
     .hero-badges {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;
-      margin-bottom: 2.5rem;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;
+      margin-bottom: 1.75rem;
     }
     .badge {
-      padding: 0.4rem 1rem;
+      padding: 0.3rem 0.8rem;
       border: 1px solid rgba(201,149,58,0.3);
       border-radius: 2px;
-      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
       color: rgba(253,248,241,0.7);
     }
 
     .hero-cta {
-      display: inline-flex; align-items: center; gap: 0.75rem;
+      display: inline-flex; align-items: center; gap: 0.6rem;
       background: var(--crimson);
       color: var(--cream);
       text-decoration: none;
-      padding: 1rem 2.5rem;
-      font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.8rem 2rem;
+      font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
       font-weight: 500;
       border-radius: 2px;
       transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
@@ -340,7 +340,7 @@
 
     .section-title {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
       font-weight: 700; line-height: 1.15;
       letter-spacing: -0.02em;
       color: var(--dark);
@@ -801,6 +801,12 @@
     .reveal-delay-4 { transition-delay: 0.4s; }
 
     /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 1366px) {
+      .hero-content { max-width: 720px; }
+      section { padding: 5.5rem 3rem; }
+      nav { padding: 1rem 3rem; }
+      nav.scrolled { padding: 0.7rem 3rem; }
+    }
     @media (max-width: 1024px) {
       #about { grid-template-columns: 1fr; gap: 3rem; }
       #contact { grid-template-columns: 1fr; }
@@ -850,7 +856,7 @@
   <div class="hero-columns"></div>
 
   <div class="hero-content">
-    <img src="logo.png" alt="Renaissance ELTA" style="width:130px;height:130px;object-fit:contain;margin-bottom:1rem;filter:drop-shadow(0 0 24px rgba(184,21,42,0.6));" />
+    <img src="logo.png" alt="Renaissance ELTA" style="width:90px;height:90px;object-fit:contain;margin-bottom:0.75rem;filter:drop-shadow(0 0 18px rgba(184,21,42,0.6));" />
     <p class="hero-eyebrow">Est. in Yangon · Myanmar</p>
     <h1 class="hero-title">
       <em>Renaissance</em>
