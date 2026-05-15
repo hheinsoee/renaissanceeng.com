@@ -121,46 +121,44 @@
     /* ── NAVIGATION ─────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
+      z-index: 200;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 4rem;
-      background: rgba(28, 10, 14, 0.92);
+      padding: 0.9rem 3rem;
+      background: rgba(28, 10, 14, 0.96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(201, 149, 58, 0.25);
       transition: padding 0.3s ease;
     }
-    nav.scrolled { padding: 0.8rem 4rem; }
+    nav.scrolled { padding: 0.65rem 3rem; }
 
     .nav-logo {
-      display: flex; align-items: center; gap: 0.75rem;
-      text-decoration: none;
+      display: flex; align-items: center; gap: 0.65rem;
+      text-decoration: none; flex-shrink: 0;
     }
     .nav-logo-mark {
-      width: 44px; height: 44px;
-      flex-shrink: 0;
+      width: 38px; height: 38px; flex-shrink: 0;
     }
-    .nav-logo-mark img {
-      width: 100%; height: 100%;
-      object-fit: contain;
-    }
+    .nav-logo-mark img { width: 100%; height: 100%; object-fit: contain; }
     .nav-logo-text {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.1rem; font-weight: 700;
-      color: var(--cream); letter-spacing: 0.01em;
-      line-height: 1.2;
+      font-size: 1rem; font-weight: 700;
+      color: var(--cream); letter-spacing: 0.01em; line-height: 1.2;
     }
-    .nav-logo-text span { display: block; font-size: 0.6rem; font-weight: 300; color: var(--gold-lt); letter-spacing: 0.18em; text-transform: uppercase; }
+    .nav-logo-text span {
+      display: block; font-size: 0.52rem; font-weight: 300;
+      color: var(--gold-lt); letter-spacing: 0.1em; text-transform: uppercase;
+      white-space: nowrap;
+    }
 
     .nav-links {
-      display: flex; gap: 2rem; list-style: none;
+      display: flex; gap: 1.5rem; list-style: none; align-items: center;
     }
     .nav-links a {
       text-decoration: none;
       color: rgba(255,255,255,0.75);
-      font-size: 0.82rem; font-weight: 400;
+      font-size: 0.78rem; font-weight: 400;
       letter-spacing: 0.08em; text-transform: uppercase;
-      transition: color 0.2s;
-      position: relative;
+      transition: color 0.2s; position: relative; white-space: nowrap;
     }
     .nav-links a::after {
       content: '';
@@ -173,15 +171,52 @@
     .nav-links a:hover::after { transform: scaleX(1); }
 
     .nav-cta {
-      background: var(--crimson);
+      background: var(--crimson) !important;
       color: var(--cream) !important;
-      padding: 0.5rem 1.2rem;
+      padding: 0.45rem 1rem !important;
       border-radius: 2px;
-      font-size: 0.78rem !important;
+      font-size: 0.75rem !important;
+      white-space: nowrap;
       transition: background 0.2s !important;
     }
     .nav-cta:hover { background: var(--crimson-lt) !important; }
     .nav-cta::after { display: none !important; }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer;
+      padding: 4px; z-index: 201;
+    }
+    .nav-hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--cream); border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .nav-drawer {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(28,10,14,0.98);
+      z-index: 199;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 2rem;
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a {
+      font-size: 1.2rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: rgba(255,255,255,0.8);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-drawer a:hover { color: var(--gold-lt); }
+    .nav-drawer .nav-cta {
+      margin-top: 0.5rem; padding: 0.7rem 2rem !important; font-size: 0.9rem !important;
+    }
 
     /* ── HERO ───────────────────────────────────────────── */
     .hero {
@@ -787,11 +822,13 @@
     .reveal-delay-4 { transition-delay: 0.4s; }
 
     /* ── RESPONSIVE ─────────────────────────────────────── */
+    @media (max-width: 1200px) {
+      .nav-logo-text span { display: none; }
+      .nav-links { gap: 1.2rem; }
+    }
     @media (max-width: 1366px) {
       .hero-content { max-width: 720px; }
       section { padding: 5.5rem 3rem; }
-      nav { padding: 1rem 3rem; }
-      nav.scrolled { padding: 0.7rem 3rem; }
     }
     @media (max-width: 1024px) {
       #about { grid-template-columns: 1fr; gap: 3rem; }
@@ -799,16 +836,20 @@
       .contact-map { min-height: 350px; }
       .map-overlay { background: linear-gradient(to bottom, var(--dark) 0%, transparent 20%); }
     }
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      nav.scrolled { padding: 0.7rem 1.5rem; }
+    @media (max-width: 860px) {
       .nav-links { display: none; }
-      section { padding: 5rem 1.5rem; }
+      .nav-hamburger { display: flex; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0.9rem 1.5rem; }
+      nav.scrolled { padding: 0.65rem 1.5rem; }
+      section { padding: 4.5rem 1.5rem; }
       #curriculum .inner { padding: 0 1.5rem; }
+      .slider-track-wrap { padding: 0 1.5rem; }
       .slider-dots { padding: 0 1.5rem; }
-      .contact-info { padding: 5rem 1.5rem; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
-      .curriculum-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      .contact-info { padding: 4.5rem 1.5rem; }
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 1.5rem; }
+      .curriculum-header { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
     }
   </style>
 </head>
@@ -816,21 +857,33 @@
 
 <!-- NAVIGATION -->
 <nav id="navbar">
-  <a href="#" class="nav-logo">
-    <div class="nav-logo-mark"><img src="logo.png" alt="Renaissance ELTA Logo" /></div>
+  <a href="#" class="nav-logo" title="Renaissance Language Campus — Home">
+    <div class="nav-logo-mark"><img src="logo.png" alt="Renaissance Language Campus Logo" /></div>
     <div class="nav-logo-text">
       Renaissance
       <span>Language Campus & Translation Services</span>
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="#about" title="About Renaissance ELTA">About</a></li>
-    <li><a href="#curriculum" title="View our 6-level English curriculum books">Curriculum</a></li>
-    <li><a href="#classes" title="Browse our English class schedules">Classes</a></li>
-    <li><a href="#contact" title="Contact Renaissance ELTA">Contact</a></li>
-    <li><a href="#contact" class="nav-cta" title="Enroll in an English class at Renaissance ELTA">Enroll Now</a></li>
+    <li><a href="#about"      title="About Renaissance Language Campus">About</a></li>
+    <li><a href="#curriculum" title="View our English Explorer curriculum">Curriculum</a></li>
+    <li><a href="#classes"    title="Browse English class schedules">Classes</a></li>
+    <li><a href="#contact"    title="Contact Renaissance Language Campus">Contact</a></li>
+    <li><a href="#contact" class="nav-cta" title="Enroll in an English class">Enroll Now</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="#about"      onclick="closeDrawer()">About</a>
+  <a href="#curriculum" onclick="closeDrawer()">Curriculum</a>
+  <a href="#classes"    onclick="closeDrawer()">Classes</a>
+  <a href="#contact"    onclick="closeDrawer()">Contact</a>
+  <a href="#contact" class="nav-cta" onclick="closeDrawer()">Enroll Now</a>
+</div>
 
 <main>
 <!-- HERO -->
@@ -1358,6 +1411,20 @@
   });
 
   window.addEventListener('resize', () => goTo(current));
+
+  // HAMBURGER
+  const hamburger = document.getElementById('hamburger');
+  const navDrawer = document.getElementById('navDrawer');
+  function closeDrawer() {
+    hamburger.classList.remove('open');
+    navDrawer.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', () => {
+    const isOpen = navDrawer.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
 </script>
 </body>
 </html>
