@@ -358,7 +358,7 @@
 
     /* ── ABOUT ──────────────────────────────────────────── */
     #about {
-      background: var(--ivory);
+      background: #F0E8D0;
       display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
       align-items: center;
     }
@@ -366,55 +366,40 @@
     .about-visual {
       position: relative;
     }
-    .about-frame {
-      background: var(--crimson-dk);
-      padding: 3rem 2.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .about-frame::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(201,149,58,0.15) 0%, transparent 60%);
-    }
-    .about-frame-ornament {
-      position: absolute; top: 1rem; right: 1rem;
-      width: 60px; height: 60px;
-      border: 1px solid rgba(201,149,58,0.3);
-      border-radius: 50%;
-    }
-    .about-frame-ornament::after {
-      content: '';
-      position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px;
-      border: 1px solid rgba(201,149,58,0.2);
-      border-radius: 50%;
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
     }
     .about-stat {
-      position: relative; z-index: 1;
-      border-bottom: 1px solid rgba(201,149,58,0.2);
-      padding-bottom: 1.5rem; margin-bottom: 1.5rem;
+      background: #FAF8F5;
+      border: 1px solid rgba(184,21,42,0.08);
+      border-radius: 6px;
+      padding: 1.8rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
     }
-    .about-stat:last-child { border: none; margin: 0; padding: 0; }
+    .about-stat:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(184,21,42,0.07);
+    }
+    .about-stat::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--crimson);
+      opacity: 0.7;
+    }
     .about-stat-num {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 3rem; font-weight: 800; line-height: 1;
-      color: var(--gold-lt);
+      font-size: 2.6rem; font-weight: 800; line-height: 1;
+      color: var(--crimson);
       letter-spacing: -0.03em;
     }
     .about-stat-label {
-      font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
-      color: rgba(253,248,241,0.6); margin-top: 0.25rem;
+      font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-top: 0.4rem; font-weight: 500;
     }
-
-    .about-corner {
-      position: absolute;
-      width: 40px; height: 40px;
-      border-color: var(--gold);
-      border-style: solid;
-      opacity: 0.5;
-    }
-    .about-corner.tl { top: -10px; left: -10px; border-width: 2px 0 0 2px; }
-    .about-corner.br { bottom: -10px; right: -10px; border-width: 0 2px 2px 0; }
 
     /* ── CURRICULUM SLIDER ──────────────────────────────── */
     #curriculum {
@@ -890,16 +875,13 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="about-visual reveal">
-    <div class="about-corner tl"></div>
-    <div class="about-corner br"></div>
-    <div class="about-frame">
-      <div class="about-frame-ornament"></div>
+    <div class="about-stats-grid">
       <div class="about-stat">
         <div class="about-stat-num">500+</div>
         <div class="about-stat-label">Graduates transformed</div>
       </div>
       <div class="about-stat">
-        <div class="about-stat-num">6</div>
+        <div class="about-stat-num">5</div>
         <div class="about-stat-label">Curriculum levels</div>
       </div>
       <div class="about-stat">
