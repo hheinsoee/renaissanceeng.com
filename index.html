@@ -872,6 +872,180 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
+    /* ── TRANSLATION SERVICES ───────────────────────────── */
+    #translation {
+      background: var(--cream);
+    }
+    .trans-intro {
+      max-width: 680px;
+      margin-bottom: 4rem;
+    }
+    .trans-services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 5rem;
+    }
+    .trans-card {
+      background: #FAF8F5;
+      border: 1px solid rgba(184,21,42,0.12);
+      border-radius: 4px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .trans-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--crimson);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .trans-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(184,21,42,0.08);
+      border-color: rgba(184,21,42,0.25);
+    }
+    .trans-card:hover::before { transform: scaleX(1); }
+    .trans-card-icon {
+      width: 48px; height: 48px;
+      background: rgba(184,21,42,0.08);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--crimson);
+    }
+    .trans-card h3 {
+      font-size: 1.15rem; font-weight: 700;
+      letter-spacing: -0.02em; color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+    .trans-card p {
+      font-size: 0.83rem; line-height: 1.7; color: var(--muted);
+    }
+
+    .trans-body-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: start;
+      margin-bottom: 5rem;
+    }
+    .trans-story h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem; font-weight: 700;
+      letter-spacing: -0.02em; color: var(--dark);
+      margin-bottom: 1rem; line-height: 1.25;
+    }
+    .trans-story p {
+      font-size: 0.88rem; line-height: 1.85; color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+    .trans-stats {
+      display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(184,21,42,0.1);
+    }
+    .trans-stat-num {
+      font-size: 2.2rem; font-weight: 800;
+      color: var(--crimson); letter-spacing: -0.03em; line-height: 1;
+    }
+    .trans-stat-label {
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin-top: 0.35rem; font-weight: 500;
+    }
+
+    .trans-clients-head {
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--crimson);
+      margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .trans-clients-head::before {
+      content: ''; display: block; width: 20px; height: 1px; background: var(--crimson);
+    }
+    .client-list {
+      display: flex; flex-direction: column; gap: 0.55rem;
+    }
+    .client-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.7rem 1rem;
+      background: #FAF8F5;
+      border: 1px solid rgba(184,21,42,0.08);
+      border-radius: 4px;
+      font-size: 0.85rem; color: var(--text);
+      font-weight: 500;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .client-item:hover {
+      border-color: rgba(184,21,42,0.2);
+      background: #fff;
+    }
+    .client-item-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%; background: var(--crimson);
+      flex-shrink: 0;
+    }
+
+    .trans-portfolio-head {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;
+    }
+    .trans-portfolio-head h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.35rem; font-weight: 700;
+      letter-spacing: -0.02em; color: var(--dark);
+    }
+    .trans-portfolio-head p {
+      font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em;
+    }
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0.55rem;
+    }
+    .portfolio-item {
+      display: flex; align-items: flex-start; gap: 0.65rem;
+      padding: 0.75rem 0.9rem;
+      background: #FAF8F5;
+      border: 1px solid rgba(184,21,42,0.07);
+      border-radius: 3px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .portfolio-item:hover {
+      border-color: rgba(184,21,42,0.2);
+      background: #fff;
+    }
+    .portfolio-num {
+      font-size: 0.63rem; font-weight: 700; color: var(--crimson);
+      min-width: 18px; padding-top: 0.1rem; letter-spacing: 0.04em; flex-shrink: 0;
+    }
+    .portfolio-title {
+      font-size: 0.79rem; line-height: 1.5; color: var(--text);
+    }
+    .portfolio-client {
+      display: block; margin-top: 0.25rem;
+      font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .portfolio-hidden { display: none; }
+    .portfolio-toggle {
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1.75rem;
+    }
+    .portfolio-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: none; border: 1px solid rgba(184,21,42,0.3);
+      color: var(--crimson); cursor: pointer;
+      padding: 0.65rem 1.75rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+      border-radius: 2px; font-weight: 500;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .portfolio-btn:hover {
+      background: rgba(184,21,42,0.06);
+      border-color: var(--crimson);
+    }
+
     /* ── RESPONSIVE ─────────────────────────────────────── */
     @media (max-width: 1200px) {
       .nav-logo-text span { display: none; }
@@ -884,6 +1058,9 @@
     }
     @media (max-width: 1024px) {
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .trans-services { grid-template-columns: 1fr 1fr; }
+      .trans-body-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
       #contact { grid-template-columns: 1fr; }
       .contact-map { min-height: 350px; }
       .map-overlay { background: linear-gradient(to bottom, var(--dark) 0%, transparent 20%); }
@@ -901,6 +1078,10 @@
       .contact-info { padding: 4.5rem 1.5rem; }
       .footer-content { flex-direction: column; gap: 0.75rem; text-align: center; }
       .curriculum-header { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+      .trans-services { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .trans-portfolio-head { flex-direction: column; align-items: flex-start; }
+      .trans-stats { gap: 1.5rem; }
     }
   </style>
 </head>
@@ -917,8 +1098,9 @@
       </div>
     </a>
     <ul class="nav-links">
-      <li><a href="#about"      title="About Renaissance Language Campus">About</a></li>
-      <li><a href="#curriculum" title="View our English Explorer curriculum">Curriculum</a></li>
+      <li><a href="#about"       title="About Renaissance Language Campus">About</a></li>
+      <li><a href="#translation" title="Translation &amp; Interpretation Services">Translation</a></li>
+      <li><a href="#curriculum"  title="View our English Explorer curriculum">Curriculum</a></li>
       <li><a href="#classes"    title="Browse English class schedules">Classes</a></li>
       <li><a href="#contact"    title="Contact Renaissance Language Campus">Contact</a></li>
       <li><a href="tel:+959448041603" class="nav-call" title="Call Renaissance Language Campus">
@@ -940,8 +1122,9 @@
 
 <!-- MOBILE DRAWER -->
 <div class="nav-drawer" id="navDrawer">
-  <a href="#about"      onclick="closeDrawer()">About</a>
-  <a href="#curriculum" onclick="closeDrawer()">Curriculum</a>
+  <a href="#about"       onclick="closeDrawer()">About</a>
+  <a href="#translation" onclick="closeDrawer()">Translation</a>
+  <a href="#curriculum"  onclick="closeDrawer()">Curriculum</a>
   <a href="#classes"    onclick="closeDrawer()">Classes</a>
   <a href="#contact"    onclick="closeDrawer()">Contact</a>
   <a href="tel:+959448041603" class="nav-call" onclick="closeDrawer()">
@@ -1035,6 +1218,325 @@
       </a>
     </div>
   </div>
+</div>
+</section>
+
+<!-- TRANSLATION SERVICES -->
+<section id="translation">
+<div class="container">
+
+  <div class="trans-intro">
+    <p class="section-eyebrow reveal">Core Service</p>
+    <h2 class="section-title reveal reveal-delay-1">Translation &amp;<br><em>Interpretation Services</em></h2>
+    <p class="section-lead reveal reveal-delay-2">
+      Professional English–Burmese translation and interpretation serving international organisations,
+      government bodies, and NGOs across Myanmar since 2012.
+    </p>
+  </div>
+
+  <!-- Service Cards -->
+  <div class="trans-services">
+    <div class="trans-card reveal">
+      <div class="trans-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <line x1="10" y1="9" x2="8" y2="9"/>
+        </svg>
+      </div>
+      <h3>Document Translation</h3>
+      <p>Legal statutes, policy papers, technical reports, manuals, and official documents translated with precision between English and Burmese.</p>
+    </div>
+
+    <div class="trans-card reveal reveal-delay-1">
+      <div class="trans-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <h3>Simultaneous Interpretation</h3>
+      <p>Real-time interpretation for conferences, workshops, and international meetings. Delivered seamlessly without interrupting the flow of proceedings.</p>
+    </div>
+
+    <div class="trans-card reveal reveal-delay-2">
+      <div class="trans-card-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+      </div>
+      <h3>Consecutive Interpretation</h3>
+      <p>Accurate consecutive interpretation for interviews, negotiations, field visits, and bilateral meetings — preserving tone, context, and intent.</p>
+    </div>
+  </div>
+
+  <!-- Story + Clients -->
+  <div class="trans-body-grid">
+    <div class="trans-story reveal">
+      <h3>A Decade of Trusted Service</h3>
+      <p>
+        Renaissance began providing translation services for NGOs in Rakhine State before formally joining the
+        <strong>Pyoe Pin Programme</strong> in 2012 — a British Council Yangon initiative promoting inclusive
+        governance, accountability, and sustainable development in Myanmar.
+      </p>
+      <p>
+        Through Pyoe Pin, Renaissance became a key translation and interpretation partner for civil society,
+        government, and private sector organisations, covering land reform, education, fisheries, forestry,
+        and health — until 2018.
+      </p>
+      <p>
+        Since then, Renaissance has expanded its portfolio to serve some of the world's most prominent
+        international organisations working in Myanmar.
+      </p>
+      <div class="trans-stats">
+        <div>
+          <div class="trans-stat-num">14+</div>
+          <div class="trans-stat-label">Years of service</div>
+        </div>
+        <div>
+          <div class="trans-stat-num">47+</div>
+          <div class="trans-stat-label">Documents translated</div>
+        </div>
+        <div>
+          <div class="trans-stat-num">10+</div>
+          <div class="trans-stat-label">International clients</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <p class="trans-clients-head">Key Clients &amp; Partners</p>
+      <div class="client-list">
+        <div class="client-item"><span class="client-item-dot"></span>World Bank Myanmar</div>
+        <div class="client-item"><span class="client-item-dot"></span>FAO — Food &amp; Agriculture Organization</div>
+        <div class="client-item"><span class="client-item-dot"></span>Oxfam</div>
+        <div class="client-item"><span class="client-item-dot"></span>International Rescue Committee (IRC)</div>
+        <div class="client-item"><span class="client-item-dot"></span>British Council Yangon</div>
+        <div class="client-item"><span class="client-item-dot"></span>Relief International</div>
+        <div class="client-item"><span class="client-item-dot"></span>Sinzer Consulting Firm</div>
+        <div class="client-item"><span class="client-item-dot"></span>NAG — Network Activities Group</div>
+        <div class="client-item"><span class="client-item-dot"></span>ACF (Action Contre la Faim)</div>
+        <div class="client-item"><span class="client-item-dot"></span>SAWBO</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio -->
+  <div class="reveal">
+    <div class="trans-portfolio-head">
+      <div>
+        <h3>Selected Translation Portfolio</h3>
+      </div>
+      <p>English ↔ Burmese · 47 documents</p>
+    </div>
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- Visible: first 12 -->
+      <div class="portfolio-item">
+        <span class="portfolio-num">01</span>
+        <div class="portfolio-title">Rakhine Freshwater Fisheries Law (Final Draft, Unofficial)</div>
+      </div>
+      <div class="portfolio-item">
+        <span class="portfolio-num">02</span>
+        <div class="portfolio-title">Irrawaddy Freshwater Fisheries Law (Unofficial)</div>
+      </div>
+      <div class="portfolio-item">
+        <span class="portfolio-num">03</span>
+        <div class="portfolio-title">Irrawaddy Freshwater Fisheries Bylaws (Unofficial)</div>
+      </div>
+      <div class="portfolio-item">
+        <span class="portfolio-num">04</span>
+        <div class="portfolio-title">Mon State Fisheries Law</div>
+      </div>
+      <div class="portfolio-item">
+        <span class="portfolio-num">05</span>
+        <div class="portfolio-title">Myanmar Country Environmental Analysis – Fisheries Sector Report</div>
+      </div>
+      <div class="portfolio-item">
+        <span class="portfolio-num">06</span>
+        <div class="portfolio-title">Myanmar Country Environmental Analysis – Synthesis Report</div>
+      </div>
+      <div class="portfolio-item">
+        <span class="portfolio-num">07</span>
+        <div class="portfolio-title">Yangon Freshwater Fisheries Law (Unofficial)</div>
+      </div>
+      <div class="portfolio-item">
+        <span class="portfolio-num">08</span>
+        <div class="portfolio-title">Essential EAFM Trainer Resource Guide<span class="portfolio-client">FAO</span></div>
+      </div>
+      <div class="portfolio-item">
+        <span class="portfolio-num">09</span>
+        <div class="portfolio-title">REAL-DEV — Reallocation and Development of Unused Concession Land</div>
+      </div>
+      <div class="portfolio-item">
+        <span class="portfolio-num">10</span>
+        <div class="portfolio-title">National Level Coastal Resources Management Committee (Unofficial)</div>
+      </div>
+      <div class="portfolio-item">
+        <span class="portfolio-num">11</span>
+        <div class="portfolio-title">National Workshop on Integrated Coastal Resources Management</div>
+      </div>
+      <div class="portfolio-item">
+        <span class="portfolio-num">12</span>
+        <div class="portfolio-title">Myanmar Reforestation and Rehabilitation Programme (MRRP)</div>
+      </div>
+
+      <!-- Hidden: items 13–47 -->
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">13</span>
+        <div class="portfolio-title">Staff Manual<span class="portfolio-client">Air Mandalay</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">14</span>
+        <div class="portfolio-title">VSAT Service Contract</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">15</span>
+        <div class="portfolio-title">TVY Report – Gender Equality, Women's Empowerment &amp; the Role of Women in Politics and Administration</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">16</span>
+        <div class="portfolio-title">Improving Solid Waste Management in Myanmar<span class="portfolio-client">World Bank</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">17</span>
+        <div class="portfolio-title">Air Quality and Pollution Management Technical Paper in Myanmar</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">18</span>
+        <div class="portfolio-title">Plastic Litter Survey in Myanmar</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">19</span>
+        <div class="portfolio-title">Plastic Policy Options in Myanmar</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">20</span>
+        <div class="portfolio-title">National Water Resources Committee</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">21</span>
+        <div class="portfolio-title">NWRC Inputs to Bill Committee</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">22</span>
+        <div class="portfolio-title">National Payment Law</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">23</span>
+        <div class="portfolio-title">Air Quality and Pollution Management Study</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">24</span>
+        <div class="portfolio-title">Pro-bono Training Documents</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">25</span>
+        <div class="portfolio-title">National Payment System Act (Draft)</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">26</span>
+        <div class="portfolio-title">Voluntary Guidelines for Securing Sustainable Small-Scale Fisheries (Final Version)<span class="portfolio-client">FAO</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">27</span>
+        <div class="portfolio-title">Supporting Policies for Blue Economy Development, Plastic Reduction &amp; Climate Mainstreaming<span class="portfolio-client">FAO</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">28</span>
+        <div class="portfolio-title">Mobile App Questionnaires — Fisheries<span class="portfolio-client">FAO</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">29</span>
+        <div class="portfolio-title">Joining Forces to Shape the Fishery Sector of Tomorrow<span class="portfolio-client">FAO</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">30</span>
+        <div class="portfolio-title">Legislating for Sustainable Small-Scale Fisheries<span class="portfolio-client">FAO</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">31</span>
+        <div class="portfolio-title">VG-SSF in the Context of Food Security and Poverty Eradication<span class="portfolio-client">FAO</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">32</span>
+        <div class="portfolio-title">Strengthening Governance of Small-Scale Fisheries<span class="portfolio-client">FAO</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">33</span>
+        <div class="portfolio-title">DDM Strategic Plan (Final, Jan)</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">34</span>
+        <div class="portfolio-title">FD Strategic Plan (Final, Jan)</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">35</span>
+        <div class="portfolio-title">Strategic Plan LVBD (English)</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">36</span>
+        <div class="portfolio-title">Kayin Year-End Report 2019–2020</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">37</span>
+        <div class="portfolio-title">Shan Year-End Report 2019–2020 (Working File)</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">38</span>
+        <div class="portfolio-title">World Bank Thaton (CCGT) Project Audit Report<span class="portfolio-client">World Bank</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">39</span>
+        <div class="portfolio-title">Learning Report – Lan Thit Si Thu Project<span class="portfolio-client">Relief International</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">40</span>
+        <div class="portfolio-title">Evaluation Report – Lan Thit Si Thu Project<span class="portfolio-client">Relief International</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">41</span>
+        <div class="portfolio-title">Youth Governance Research<span class="portfolio-client">British Council &amp; Sinzer</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">42</span>
+        <div class="portfolio-title">Myanmar Legal Aid Network – Office Manual</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">43</span>
+        <div class="portfolio-title">Baby Wash Implementation Manual<span class="portfolio-client">ACF</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">44</span>
+        <div class="portfolio-title">Pocket Guide for Implementation</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">45</span>
+        <div class="portfolio-title">Competency-Based Paralegal Training Manual</div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">46</span>
+        <div class="portfolio-title">Narrative Interpretation &amp; Voice-over: "How to Control Gems from Animal Farm"<span class="portfolio-client">SAWBO</span></div>
+      </div>
+      <div class="portfolio-item portfolio-hidden">
+        <span class="portfolio-num">47</span>
+        <div class="portfolio-title">Narrative Interpretation &amp; Voice-over: "Fertilizers and Their Risks on the Farm"<span class="portfolio-client">SAWBO</span></div>
+      </div>
+    </div>
+
+    <div class="portfolio-toggle">
+      <button class="portfolio-btn" id="portfolioToggle" onclick="togglePortfolio()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+        View All 47 Documents
+      </button>
+    </div>
+  </div>
+
 </div>
 </section>
 
@@ -1487,6 +1989,21 @@
   });
 
   window.addEventListener('resize', () => goTo(current));
+
+  // PORTFOLIO TOGGLE
+  function togglePortfolio() {
+    const hidden = document.querySelectorAll('.portfolio-hidden');
+    const btn    = document.getElementById('portfolioToggle');
+    const expanded = btn.dataset.expanded === 'true';
+    hidden.forEach(el => el.style.display = expanded ? 'none' : 'flex');
+    btn.dataset.expanded = expanded ? 'false' : 'true';
+    btn.innerHTML = expanded
+      ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg> View All 47 Documents'
+      : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg> Show Less';
+    if (expanded) {
+      document.getElementById('portfolioGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 
   // HAMBURGER
   const hamburger = document.getElementById('hamburger');
